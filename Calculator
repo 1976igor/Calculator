@@ -1,0 +1,58 @@
+package calculator;
+
+import java.util.Scanner;
+
+
+public class calculator {
+
+	public static void main (String[] args) {
+		
+		Scanner vidkorystuvacha = new Scanner (System.in);
+		double chyslo1, chyslo2, rezultat;
+		String dija;
+		
+		System.out.println("Vvedit pershe chylo...");
+		chyslo1 = Double.parseDouble(vidkorystuvacha.nextLine());
+		
+		System.out.println("Vvedit druge chyslo...");
+		chyslo2 = Double.parseDouble(vidkorystuvacha.nextLine());
+		
+		System.out.println("Vvedit diju (+-*/):");
+		dija = vidkorystuvacha.nextLine();
+		
+		if (dija.equals ("/") && chyslo2==0)
+		{
+			System.out.println("Ne mozna tak dilyty");
+			return;
+		}
+		
+		if (dija.equals("+") || dija.equals("dodaty"))
+		{
+			rezultat = chyslo1 + chyslo2;
+		}
+		
+		else if (dija.equals("-") || dija.equals("vidniaty"))
+		{
+			rezultat = chyslo1 - chyslo2;
+		}
+		
+		else if (dija.equals("*") || dija.equals("pomnozyty"))
+		{
+			rezultat = chyslo1 * chyslo2;
+		}
+		
+		else if (dija.equals("/") || dija.equals("podilyty"))
+		{
+			rezultat = chyslo1 / chyslo2;
+		}
+		
+		else
+		{
+			rezultat = 0;
+		}
+		
+		System.out.println("Rezultat: " + rezultat);
+		
+	}
+
+}
